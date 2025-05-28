@@ -7,6 +7,7 @@
     <title>List of user</title>
 </head>
 <body>
+    <a href="insert.php">Add New</a>
     <table border="2" cellpadding="10" cellspacing="5">
         <tr>
             <th>Id</th>
@@ -18,17 +19,17 @@
         <?php
             include ('conn.php');
             $select = "SELECT * FROM patient";
-            $stmt = $conn -> query ($select);
+            $stmt = $conn -> query($select);
             
             while ($row = $stmt -> fetch(PDO::FETCH_ASSOC)) {
                 echo 
                    "
                     <tr>
-                       <td>{$row['id']} </td>
+                       <td>{$row['id']}</td>
                        <td>{$row['name']} </td>
                        <td>{$row['age']} </td>
                        <td><a href='update.php?id={$row['id']}'>Update</a></td>
-                       <td><a href='delete.php?id={$row['id']}'>Delete</a</td>
+                       <td><a href='delete.php?id={$row['id']}'>Delete</a></td>
                     </tr>
                    ";
             }
