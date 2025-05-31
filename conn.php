@@ -8,5 +8,4 @@ catch(PDOException $err){
     echo"ERROR:".$err -> getMessage();
 }
 
-
 ?>

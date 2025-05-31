@@ -6,6 +6,5 @@ if (isset($_GET['id'])) {
     $stmt = $conn -> prepare($delete);
     $stmt -> execute([$id]);
     header("Location:select.php");
-
 }
 ?>
